@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<!-- The dnd-list directive allows to drop elements into it.
+     The dropped data will be added to the referenced list -->
+
+<div class="row">
+  <div class="column">
+    <h3>Componentes de Layout Disponìveis</h3>
+  </div>
+  <div class="column">
+    <h3>Pré-Visualização da Impressão</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <div class="wrapper">
+      <div id="itemsA" class="container itemsA" [dragula]='"first-bag"' [dragulaModel]='itemsA'>
+        <div *ngFor="let item of itemsA">{{item.title}}</div>
+      </div>
+      
+      <div class="container itemsB" [dragula]='"first-bag"' [dragulaModel]='itemsB'>
+        <div *ngFor="let item of itemsB">{{item.title}}</div>
+      </div>  
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="innerHtml">
+      <my-inner-html [htmlStr]="htmlStr"></my-inner-html>
+    </div>
+  </div>
+</div>

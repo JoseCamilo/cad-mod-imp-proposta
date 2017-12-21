@@ -1,0 +1,70 @@
+/* dragula-specific example page styles */
+.wrapper {
+  display: table;
+}
+.container {
+  display: table-cell;
+  background-color: #ffffff !important;
+  width: 400px;
+  border: 2px solid #b9b9b9;
+}
+.container:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/*
+ * note that styling gu-mirror directly is a bad practice because it's too generic.
+ * you're better off giving the draggable elements a unique class and styling that directly!
+ */
+.container div,
+.gu-mirror {
+  margin: 10px;
+  padding: 10px;
+  background-color: #009abe;
+  color: #ffffff;
+  transition: opacity 0.4s ease-in-out;
+  height: 100px;
+}
+.container div {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+.gu-mirror {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+.container .ex-moved {
+  background-color: #e74c3c;
+}
+.container.ex-over {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.handle {
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: move;
+}
+nested-repeat-example .container span {
+  display: block;
+  padding: 8px;
+}
+
+/*
+* Componentes customizados
+*/
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
